@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.use(cookieSession({
     // @TODO: reduce cookie maxAge after testing
     maxAge: 30 * 24 * 60 * 60 * 1000,
-    keys: keys.cookieSessionKeys
+    keys: [keys.cookieSessionKey]
 }));
 app.use(passport.initialize());
 app.use(passport.session());
