@@ -13,7 +13,7 @@ module.exports = (app) => {
     );
 
     app.get('/api/current_user', (req, res) => {
-        req.user ? res.send(req.user) : res.send({ error: 'Not logged in'});
+        res.send(req.user);
     });
 
     app.get('/api/logout', (req, res) => {
