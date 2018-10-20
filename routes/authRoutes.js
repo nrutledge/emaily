@@ -12,7 +12,9 @@ module.exports = (app) => {
        (req, res) => res.redirect('/surveys')
     );
 
-    app.get('/api/current_user', (req, res) => res.send(req.user));
+    app.get('/api/current_user', (req, res) => {
+        req.user ? res.send(req.user) : res.send({ error: 'Not logged in'});
+    });
 
     app.get('/api/logout', (req, res) => {
         req.logout();
