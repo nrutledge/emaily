@@ -46,8 +46,6 @@ module.exports = app => {
         }
       }, { prev: {}, events: [] });
 
-      console.log({ events })
-
       events.forEach(({ surveyId, email, choice }) => {
         Survey.updateOne(
           {
